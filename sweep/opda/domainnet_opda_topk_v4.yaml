@@ -1,0 +1,50 @@
+program: train_scl_topk_v2.py
+method: grid
+project: OVANET_DMT
+name: Domainet_v4
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/dnet-train-config_OPDA.yaml']
+  source_data:
+    values: [
+      './txt/source_dreal_univ_zzl.txt',
+      './txt/source_dsketch_univ_zzl.txt',
+      './txt/source_dpainting_univ_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_dreal_univ_zzl.txt',
+      './txt/target_dsketch_univ_zzl.txt',
+      './txt/target_dpainting_univ_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [50]
+  augNearRate:
+    values: [10000]
+  lr:
+    values: [0.01, 0.008]
+  min_step:
+    values: [15000]
+  gamma:
+    values: [0.4, 0.5, 0.6,]
+  alpha:
+    values: [0.9]
+  multi:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.7, 0.8]
+  ent_open_scale:
+    values: [0.2, 0.3, 0.4,]
+  aug_type:
+    values: [1]
+  beta:
+    values: [1.4,]
+  batch_size:
+    values: [80]
+  mlp_weight_decay:
+    values: [0.0002]

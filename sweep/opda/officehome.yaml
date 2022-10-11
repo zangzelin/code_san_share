@@ -1,0 +1,28 @@
+program: train.py
+method: grid
+project: OVANET_DMT
+name: testv3_C
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/officehome-train-config_ODA.yaml']
+  source_data:
+    values: [
+      './txt/source_Clipart_obda_zzl.txt',
+      './txt/source_Real_obda_zzl.txt',
+      './txt/source_Product_obda_zzl.txt',
+      './txt/source_Art_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_Clipart_obda_zzl.txt',
+      './txt/target_Art_obda_zzl.txt',
+      './txt/target_Product_obda_zzl.txt',
+      './txt/target_Real_obda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]

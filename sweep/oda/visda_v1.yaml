@@ -1,0 +1,44 @@
+program: train_scl_topk_v2.py
+method: grid
+project: OVANET_DMT
+name: ODA_VisDA_v1
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/visda-train-config_ODA.yaml']
+  source_data:
+    values: [
+      './txt/source_visda_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_visda_obda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [10000, 100000, 1000000]
+  lr:
+    values: [0.02, 0.025]
+  min_step:
+    values: [10000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.2, 0.3, 0.4]
+  multi:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.8,]
+  ent_open_scale:
+    values: [0.1]
+  aug_type:
+    values: [1]
+  beta:
+    values: [1.7, 1.5, 1.3]
+  top_k:
+    values: [15, 20, 25]

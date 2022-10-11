@@ -1,0 +1,49 @@
+program: train_scl_topk_v1.py
+method: grid
+project: OVANET_DMT
+name: ODA_OfficeHome_v1
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/officehome-train-config_ODA.yaml']
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [1000, 10000]
+  lr:
+    values: [0.015, 0.02]
+  min_step:
+    values: [10000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.2, 0.3, 0.4]
+  multi:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.75, 0.8, 0.85,]
+  ent_open_scale:
+    values: [0.1, 0.15, 0.20]
+  aug_type:
+    values: [1]
+  source_data:
+    values: [
+      './txt/source_Real_obda_zzl.txt',
+      './txt/source_Product_obda_zzl.txt',
+      './txt/source_Clipart_obda_zzl.txt',
+      './txt/source_Art_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_Art_obda_zzl.txt',
+      './txt/target_Clipart_obda_zzl.txt',
+      './txt/target_Product_obda_zzl.txt',
+      './txt/target_Real_obda_zzl.txt',
+      ]
+
+
+

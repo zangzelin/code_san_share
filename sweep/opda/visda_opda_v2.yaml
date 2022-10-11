@@ -1,0 +1,40 @@
+program: train_scl.py
+method: grid
+project: OVANET_DMT
+name: augNearRate_visda
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/visda-train-config_UDA.yaml']
+  source_data:
+    values: [
+      './txt/source_visda_list_univ_zzl.txt',
+      # './txt/source_Real_obda_zzl.txt',
+      # './txt/source_Product_obda_zzl.txt',
+      # './txt/source_Art_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_visda_list_univ_zzl.txt',
+      # './txt/target_Art_obda_zzl.txt',
+      # './txt/target_Product_obda_zzl.txt',
+      # './txt/target_Real_obda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [100000]
+  lr:
+    values: [0.005, 0.01]
+  min_step:
+    values: [50000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.4, 0.6, 0.7, 0.8, 0.9]
+  multi:
+    values: [0.05, 0.1, 0.2]

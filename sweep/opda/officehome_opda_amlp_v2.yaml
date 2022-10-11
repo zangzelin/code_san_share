@@ -1,0 +1,46 @@
+program: train_scl_amlp.py
+method: grid
+project: OVANET_DMT
+name: augNearRate_sour_aug
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/officehome-train-config_OPDA.yaml']
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [1000, 10000]
+  gamma:
+    values: [1]
+  lr:
+    values: [0.02]
+  min_step:
+    values: [30000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.5]
+  sour_aug:
+    values: [0]
+  ent_open_scale:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.6, 0.7, 0.8, 0.9]
+  source_data:
+    values: [
+      './txt/source_Real_univ_zzl.txt',
+      './txt/source_Product_univ_zzl.txt',
+      './txt/source_Clipart_univ_zzl.txt',
+      './txt/source_Art_univ_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_Art_univ_zzl.txt',
+      './txt/target_Clipart_univ_zzl.txt',
+      './txt/target_Product_univ_zzl.txt',
+      './txt/target_Real_univ_zzl.txt',
+      ]

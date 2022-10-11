@@ -1,0 +1,21 @@
+# record/office/office-train-config_ODA/train_amazon2target_dslr_obda_resnet50_hp_0.1
+record/*
+wandb/*
+record/*
+utils/__pycache__/*
+models/__pycache__/*
+data_loader/__pycache__/*
+record/office/officehome-train-config_OPDA/*
+__pycache__/*
+wandb/*
+record/office/officehome-train-config_OPDA/train_Art2target_Clipart_univ_resnet50_hp_0.1
+img/*
+file_save/*
+images/*
+apex/*
+wandb/*
+wandb/debug-internal.log
+wandb/debug.log
+analysis_ysq/*
+analysis_ys1/AIO/*
+analysis_ys1/*

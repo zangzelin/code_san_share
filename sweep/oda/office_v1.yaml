@@ -1,0 +1,38 @@
+program: train_scl_topk_v1.py
+method: grid
+project: OVANET_DMT
+name: ODA_Office_v1
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/office-train-config_ODA.yaml']
+  source_data:
+    values: [
+      './txt/source_amazon_obda_zzl.txt',
+      './txt/source_dslr_obda_zzl.txt',
+      './txt/source_webcam_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_dslr_obda_zzl.txt',
+      './txt/target_webcam_obda_zzl.txt',
+      './txt/target_amazon_obda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [100000]
+  lr:
+    values: [0.02]
+  min_step:
+    values: [10000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.4, 0.5, 0.6]
+  multi:
+    values: [0.1, 0.2, 0.3,]

@@ -1,0 +1,38 @@
+program: train_scl.py
+method: grid
+project: OVANET_DMT
+name: augNearRate_office
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/office-train-config_OPDA.yaml']
+  source_data:
+    values: [
+      './txt/source_amazon_opda_zzl.txt',
+      './txt/source_webcam_opda_zzl.txt',
+      './txt/source_dslr_opda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_dslr_opda_zzl.txt',
+      './txt/target_webcam_opda_zzl.txt',
+      './txt/target_amazon_opda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [10]
+  augNearRate:
+    values: [100000]
+  lr:
+    values: [0.02, 0.01]
+  min_step:
+    values: [10000]
+  gamma:
+    values: [0.1]
+  alpha:
+    values: [0.4, 0.6, 0.7, 0.8, 0.9]
+  multi:
+    values: [0.05, 0.1, 0.2, 0.3, 0.4]
