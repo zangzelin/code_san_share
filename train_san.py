@@ -25,7 +25,7 @@ import wandb
 import plotly.express as px
 # from neighbor import NF, LossPatEmb
 
-parser = argparse.ArgumentParser(description='Pytorch RSCL',
+parser = argparse.ArgumentParser(description='Pytorch SAN',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--config', type=str, default='config.yaml',
                     help='./configs/office-train-config_OPDA.yaml')
