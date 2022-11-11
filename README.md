@@ -1,6 +1,6 @@
-## [RSCL: Noise-Resistant for Universal Domain Adaptation]
+## Code for SAN
 
-This repository provides code for RSCL.
+This repository provides code for SAN.
 
 ### Environment
 
