@@ -19,5 +19,5 @@ wandb                        0.12.5
 ```
 mkdir file_save
 mkdir img
-python train_rscl.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=./txt/source_webcam_opda_zzl.txt --target_data=./txt/target_dslr_opda_zzl.txt
+python train_san.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=./txt/source_webcam_opda_zzl.txt --target_data=./txt/target_dslr_opda_zzl.txt
 ```
