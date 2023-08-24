@@ -10,7 +10,7 @@ print('-----')
 from sklearn.preprocessing import label_binarize
 from sklearn.metrics import f1_score, roc_auc_score,  accuracy_score
 print('-----')
-from openTSNE import TSNE
+# from openTSNE import TSNE
 import pandas as pd 
 import uuid
 import wandb
