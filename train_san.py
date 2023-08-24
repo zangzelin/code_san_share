@@ -137,7 +137,6 @@ if (args.S != args.T or args.T == 'visda'):
 
     G, C1, C2, mlp, opt_g, opt_c, \
         opt_mlp, param_lr_g, param_lr_c, param_lr_m = get_models_amlp_oda(inputs)
-        # opt_mlp, param_lr_g, param_lr_c, param_lr_m = get_models(inputs)
 
     ndata = target_folder.__len__()
     print('--------------------')
@@ -149,14 +148,6 @@ if (args.S != args.T or args.T == 'visda'):
         sigmaP=args.sigmaP,
         sigmaQ=args.sigmaQ
         ).cuda()
-    # dmt_loss_mask = dmtloss_mask.MyLossMask(
-    #     v_input=args.v_input,
-    #     v_latent=args.v_latent,
-    #     SimilarityFunc=dmtloss_mask.Similarity,
-    #     augNearRate=args.augNearRate,
-    #     sigmaP=args.sigmaP,
-    #     sigmaQ=args.sigmaQ
-    #     ).cuda()
 
     def train():
         mask = None
