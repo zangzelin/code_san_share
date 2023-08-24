@@ -64,5 +64,5 @@ parameters:
   v_latent:
     values:
       - 10
-program: train_scl_topk_v2.py
+program: train_san.py
 project: OVANET_DMT
