@@ -1,4 +1,4 @@
-program: train_scl_topk_v2.py
+program: train_san.py
 method: grid
 project: OVANET_DMT
 name: augNearRate_office
