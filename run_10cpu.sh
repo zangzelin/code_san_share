@@ -1,4 +1,4 @@
-
+ln -s /zangzelin/data /root/data
 eval "$(/zangzelin/conda/bin/conda shell.bash hook)"; conda activate env_san
 
 CUDA_VISIBLE_DEVICES=0 CUBLAS_WORKSPACE_CONFIG=:4096:8 taskset -c 0-11 wandb agent zangzelin/OVANET_DMT/4o794xt1 &
