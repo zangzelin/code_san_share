@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.manifold import TSNE
+# from sklearn.manifold import TSNE
 from sklearn.preprocessing import normalize
 import matplotlib as mpl
 mpl.use('Agg')

@@ -6,7 +6,7 @@ import os
 import logging
 from sklearn.preprocessing import label_binarize
 from sklearn.metrics import f1_score, roc_auc_score,  accuracy_score
-import umap
+# import umap
 import matplotlib.pyplot as plt
 
 
