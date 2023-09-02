@@ -339,5 +339,5 @@ if (args.S != args.T or args.T == 'visda'):
                     save_path = "%s_%s.pth"%(args.save_path, step)
                     save_model(G, C1, C2, save_path)
 
-            wandb.finish()
     train()
+    wandb.finish()
