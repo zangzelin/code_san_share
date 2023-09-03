@@ -1,3 +1,4 @@
+program: train_san.py
 method: grid
 project: OVANET_DMT
 name: opda_officehome_topk_v3
