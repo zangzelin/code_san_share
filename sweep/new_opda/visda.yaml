@@ -31,7 +31,7 @@ parameters:
   lr:
     values: [0.006, 0.005, 0.004, 0.003]
   min_step:
-    values: [15000]
+    values: [5000]
   gamma:
     values: [0.8, 0.9]
   alpha:
