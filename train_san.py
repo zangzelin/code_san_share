@@ -18,6 +18,8 @@ import utils.dmt_aug_loss_source_mask as dmtloss_mask···
 import pytorch_lightning as pl
 import plotly.graph_objects as go
 
+import sys
+
 from eval import test, test_amlp_v2_only_c2_maxcompair_eachclass, test_thr_open, test_only_c2, test_amlp, test_amlp_v2, test_amlp_v2_only_c2
 from eval import test_amlp_v2_only_c2_maxcompair
 import argparse
@@ -341,3 +343,4 @@ if (args.S != args.T or args.T == 'visda'):
 
     train()
     wandb.finish()
+    sys.exit()
