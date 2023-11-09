@@ -90,7 +90,8 @@ args.T = args.target_data.split('_')[1]
 wandb.init(
     name=args.source_data+'_'+args.target_data,
     project="OVANET_DMT",
-    entity="zangzelin_hotmail",
+    # entity="zangzelin_hotmail",
+    entity="zangzelin",
     config=args,
     )
 
