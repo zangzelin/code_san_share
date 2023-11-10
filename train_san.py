@@ -164,6 +164,7 @@ if (args.S != args.T or args.T == 'visda'):
 
         # import pdb; pdb.set_trace()
         h_score_epoch = 0
+        save_path = None
         for step in range(conf.train.min_step + 1):
             G.train()
             C1.train()
@@ -321,7 +322,13 @@ if (args.S != args.T or args.T == 'visda'):
                     save_path = f'model_parameters_{args.source_data}_{args.target_data}_{time_str_default}.pth'.replace('/','?')
                     save_model(G, C1, C2, mlp, save_path)
                 
-                G, C1, C2, mlp = load_model(G, C1, C2, mlp)
+                if save_path:
+                    G_test, C1_test, C2_test, mlp_test = load_model(G, C1, C2, mlp, load_path=save_path)
+                    _, h_score_c2_test = test_amlp_v2_only_c2_maxcompair(
+                        step, test_loader_s, test_loader, logname, n_share, [G_test, mlp_test],
+                        [C1_test, C2_test], mlp_test, open=open, argsSName=args.S
+                        )
+                    print('h_score_c2_test', h_score_c2_test, 'h_score_epoch', h_score_epoch)
 
                 # print("acc all %s h_score %s " % (acc_o, h_score))
                 print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))
