@@ -319,11 +319,11 @@ if (args.S != args.T or args.T == 'visda'):
                     now = datetime.now()
                     time_str_default = now.strftime("%Y-%m-%d %H:%M:%S")
                     h_score_epoch = h_score_c2
-                    save_path = f'model_save/model_parameters_{args.source_data}_{args.target_data}_{time_str_default}.pth'.replace('/','?')
-                    save_model(G, C1, C2, mlp, save_path)
+                    save_path = f'model_parameters_{args.source_data}_{args.target_data}_{time_str_default}_{h_score_c2}.pth'.replace('/','?')
+                    save_model(G, C1, C2, mlp, 'model_save/'+save_path)
                 
                 if save_path:
-                    G_test, C1_test, C2_test, mlp_test = load_model(G, C1, C2, mlp, load_path=save_path)
+                    G_test, C1_test, C2_test, mlp_test = load_model(G, C1, C2, mlp, load_path='model_save/'+save_path)
                     _, h_score_c2_test = test_amlp_v2_only_c2_maxcompair(
                         step, test_loader_s, test_loader, logname, n_share, [G_test, mlp_test],
                         [C1_test, C2_test], mlp_test, open=open, argsSName=args.S
