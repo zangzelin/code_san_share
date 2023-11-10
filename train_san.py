@@ -315,13 +315,8 @@ if (args.S != args.T or args.T == 'visda'):
                 #     )
                 if h_score_epoch <= h_score_c2:
                     h_score_epoch = h_score_c2
-                    torch.save(G.state_dict(), f'model_parameters_G_{args.source_data}_{args.target_data}.pth')
-                    torch.save(C1.state_dict(), f'model_parameters_C1_{args.source_data}_{args.target_data}.pth')
-                    torch.save(C2.state_dict(), f'model_parameters_C2_{args.source_data}_{args.target_data}.pth')
-                    torch.save(mlp.state_dict(), f'model_parameters_mlp_{args.source_data}_{args.target_data}.pth')
-
-                    # save the model
-
+                    save_path = f'model_parameters_{args.source_data}_{args.target_data}.pth'
+                    save_model(G, C1, C2, mlp, save_path)
 
                 # print("acc all %s h_score %s " % (acc_o, h_score))
                 print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))
