@@ -1,0 +1,52 @@
+program: train_san.py
+method: grid
+project: OVANET_DMT
+name: opda_visda_new_v1
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/visda-train-config_UDA.yaml']
+  source_data:
+    values: [
+      './txt/source_visda_list_univ_zzl.txt',
+      # './txt/source_Real_obda_zzl.txt',
+      # './txt/source_Product_obda_zzl.txt',
+      # './txt/source_Art_obda_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_visda_list_univ_zzl.txt',
+      # './txt/target_Art_obda_zzl.txt',
+      # './txt/target_Product_obda_zzl.txt',
+      # './txt/target_Real_obda_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [50]
+  augNearRate:
+    values: [100]
+  lr:
+    values: [0.006, 0.005, 0.004, 0.003]
+  min_step:
+    values: [5000]
+  gamma:
+    values: [0.8, 0.9]
+  alpha:
+    values: [0.9]
+  multi:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.55,]
+  ent_open_scale:
+    values: [0.08, 0.09]
+  aug_type:
+    values: [1]
+  beta:
+    values: [1.4]
+  batch_size:
+    values: [30, 32, 36, 50]
+  mlp_weight_decay:
+    values: [0.0002]

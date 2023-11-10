@@ -1,0 +1,68 @@
+method: grid
+metric:
+  goal: maximize
+  name: SVC
+name: Domainet_new_v1
+parameters:
+  alpha:
+    values:
+      - 0.9
+  aug_type:
+    values:
+      - 1
+  augNearRate:
+    values:
+      - 10000
+  batch_size:
+    values:
+      - 80
+  beta:
+    values:
+      - 1.4
+  config:
+    values:
+      - configs/dnet-train-config_OPDA.yaml
+  data_aug_crop:
+    values:
+      - 0.8
+      - 0.75
+      - 0.85
+  ent_open_scale:
+    values:
+      - 0.6
+      - 0.55
+      - 0.5
+  gamma:
+    values:
+      - 0.4
+      - 0.35
+  lr:
+    values:
+      - 0.012
+  min_step:
+    values:
+      - 15000
+  mlp_weight_decay:
+    values:
+      - 0.0002
+  multi:
+    values:
+      - 0.2
+  sigmaP:
+    values:
+      - 50
+  source_data:
+    values:
+      - ./txt/source_dreal_univ_zzl.txt
+      - ./txt/source_dsketch_univ_zzl.txt
+      - ./txt/source_dpainting_univ_zzl.txt
+  target_data:
+    values:
+      - ./txt/target_dreal_univ_zzl.txt
+      - ./txt/target_dsketch_univ_zzl.txt
+      - ./txt/target_dpainting_univ_zzl.txt
+  v_latent:
+    values:
+      - 10
+program: train_san.py
+project: OVANET_DMT

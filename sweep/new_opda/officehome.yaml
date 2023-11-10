@@ -1,0 +1,52 @@
+program: train_san.py
+method: grid
+project: OVANET_DMT
+name: opda_officehome_topk_v3
+metric:
+  goal: maximize
+  name: SVC
+parameters:
+  config:
+    values: ['configs/officehome-train-config_OPDA.yaml']
+  source_data:
+    values: [
+      './txt/source_Real_univ_zzl.txt',
+      './txt/source_Product_univ_zzl.txt',
+      './txt/source_Clipart_univ_zzl.txt',
+      './txt/source_Art_univ_zzl.txt',
+      ]
+  target_data:
+    values: [
+      './txt/target_Art_univ_zzl.txt',
+      './txt/target_Clipart_univ_zzl.txt',
+      './txt/target_Product_univ_zzl.txt',
+      './txt/target_Real_univ_zzl.txt',
+      ]
+  v_latent:
+    values: [10]
+  sigmaP:
+    values: [50]
+  augNearRate:
+    values: [10000]
+  lr:
+    values: [0.01,0.02]
+  min_step:
+    values: [10000]
+  gamma:
+    values: [0.6]
+  alpha:
+    values: [0.5]
+  multi:
+    values: [0.2]
+  data_aug_crop:
+    values: [0.7, 0.8]
+  ent_open_scale:
+    values: [0.1]
+  aug_type:
+    values: [1]
+  beta:
+    values: [1.2, 1.4,]
+  batch_size:
+    values: [50, 64,]
+  mlp_weight_decay:
+    values: [0.0005]
