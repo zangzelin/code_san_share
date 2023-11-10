@@ -319,7 +319,7 @@ if (args.S != args.T or args.T == 'visda'):
                     now = datetime.now()
                     time_str_default = now.strftime("%Y-%m-%d %H:%M:%S")
                     h_score_epoch = h_score_c2
-                    save_path = f'model_parameters_{args.source_data}_{args.target_data}_{time_str_default}.pth'.replace('/','?')
+                    save_path = f'model_save/model_parameters_{args.source_data}_{args.target_data}_{time_str_default}.pth'.replace('/','?')
                     save_model(G, C1, C2, mlp, save_path)
                 
                 if save_path:
