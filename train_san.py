@@ -313,7 +313,15 @@ if (args.S != args.T or args.T == 'visda'):
                 #     step, test_loader_s, test_loader, logname, n_share, [G, mlp],
                 #     [C1, C2], mlp, open=open, argsSName=args.S
                 #     )
-                h_score_epoch = max(h_score_epoch, h_score_c2)
+                if h_score_epoch <= h_score_c2:
+                    h_score_epoch = h_score_c2
+                    torch.save(G.state_dict(), f'model_parameters_G_{args.source_data}_{args.target_data}.pth')
+                    torch.save(C1.state_dict(), f'model_parameters_C1_{args.source_data}_{args.target_data}.pth')
+                    torch.save(C2.state_dict(), f'model_parameters_C2_{args.source_data}_{args.target_data}.pth')
+                    torch.save(mlp.state_dict(), f'model_parameters_mlp_{args.source_data}_{args.target_data}.pth')
+
+                    # save the model
+
 
                 # print("acc all %s h_score %s " % (acc_o, h_score))
                 print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))
