@@ -19,3 +19,4 @@ wandb/debug.log
 analysis_ysq/*
 analysis_ys1/AIO/*
 analysis_ys1/*
+model_save/*

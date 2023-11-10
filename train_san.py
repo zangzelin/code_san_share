@@ -8,7 +8,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 # from apex import amp, optimizers
-from utils.utils import log_set, save_model
+from utils.utils import log_set, save_model, load_model
 from utils.loss import ova_loss, open_entropy, ova_loss_amlp
 from utils.lr_schedule import inv_lr_scheduler
 from utils.defaults import get_dataloaders, get_models, get_models_amlp, get_dataloaders_mlp, get_models_amlp_oda
@@ -17,6 +17,7 @@ import utils.dmt_aug_loss_source as dmtloss
 import utils.dmt_aug_loss_source_mask as dmtloss_mask···
 import pytorch_lightning as pl
 import plotly.graph_objects as go
+from datetime import datetime
 
 import sys
 
@@ -314,9 +315,13 @@ if (args.S != args.T or args.T == 'visda'):
                 #     [C1, C2], mlp, open=open, argsSName=args.S
                 #     )
                 if h_score_epoch <= h_score_c2:
+                    now = datetime.now()
+                    time_str_default = now.strftime("%Y-%m-%d %H:%M:%S")
                     h_score_epoch = h_score_c2
-                    save_path = f'model_parameters_{args.source_data}_{args.target_data}.pth'.replace('/','?')
+                    save_path = f'model_parameters_{args.source_data}_{args.target_data}_{time_str_default}.pth'.replace('/','?')
                     save_model(G, C1, C2, mlp, save_path)
+                
+                G, C1, C2, mlp = load_model(G, C1, C2, mlp)
 
                 # print("acc all %s h_score %s " % (acc_o, h_score))
                 print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))

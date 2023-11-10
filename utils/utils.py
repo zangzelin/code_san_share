@@ -58,8 +58,17 @@ def save_model(model_g, model_c1, model_c2, mlp, save_path):
     }
     torch.save(save_dic, save_path)
 
-def load_model(model_g, model_c, load_path):
+def load_model(model_g, model_c1, model_c2, mlp, load_path):
+    import copy
     checkpoint = torch.load(load_path)
-    model_g.load_state_dict(checkpoint['g_state_dict'])
-    model_c.load_state_dict(checkpoint['c_state_dict'])
-    return model_g, model_c
+
+    model_g_copy = copy.deepcopy(model_g)
+    model_c1_copy = copy.deepcopy(model_c1)
+    model_c2_copy = copy.deepcopy(model_c2)
+    mlp_copy = copy.deepcopy(mlp)
+
+    model_g_copy.load_state_dict(checkpoint['g_state_dict'])
+    model_c1_copy.load_state_dict(checkpoint['c1_state_dict'])
+    model_c2_copy.load_state_dict(checkpoint['c2_state_dict'])
+    mlp_copy.load_state_dict(checkpoint['mlp_state_dict'])
+    return model_g_copy, model_c1_copy, model_c2_copy, mlp_copy
