@@ -38,6 +38,7 @@ dreal -> dpainting : 0.5293
 dsketch -> dpainting : 0.4791
 dpainting -> dsketch : 0.4758
 dreal -> dsketch : 0.4671
+mean: 51.9
 
 run 2:
 dpainting -> dreal: 0.58
@@ -46,3 +47,4 @@ dreal -> dpainting: 0.5283
 dsketch -> dpainting: 0.4822
 dpainting -> dsketch: 0.4738
 dreal -> dsketch: 0.4647
+mean: 51.9
