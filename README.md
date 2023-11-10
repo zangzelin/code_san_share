@@ -4,6 +4,7 @@ This repository provides code for SAN.
 
 ### Environment
 
+check env.txt
 ```
 pytorch-lightning            1.4.8
 torch                        1.11.0
