@@ -31,10 +31,18 @@ wandb agent */OVANET_DMT/***
 ```
 The sweep results is in http://www.zangzelin.fun:4080/zangzelin/OVANET_DMT/sweeps/yu5k29s9?workspace=user-zangzelin
 
-source_dpainting_univ_zzl.txt_ -> target_dreal_univ_zzl.txt : 0.5838
-source_dsketch_univ_zzl.txt_ -> target_dreal_univ_zzl.txt : 0.5793
-source_dreal_univ_zzl.txt_ -> target_dpainting_univ_zzl.txt : 0.5293
-source_dsketch_univ_zzl.txt_ -> target_dpainting_univ_zzl.txt : 0.4791
-source_dpainting_univ_zzl.txt_ -> target_dsketch_univ_zzl.txt : 0.4758
-source_dreal_univ_zzl.txt_ -> target_dsketch_univ_zzl.txt : 0.4671
+run 1:
+dpainting -> dreal : 0.5838
+dsketch -> dreal : 0.5793
+dreal -> dpainting : 0.5293
+dsketch -> dpainting : 0.4791
+dpainting -> dsketch : 0.4758
+dreal -> dsketch : 0.4671
 
+run 2:
+dpainting -> dreal: 0.58
+dsketch -> dreal: 0.5823
+dreal -> dpainting: 0.5283
+dsketch -> dpainting: 0.4822
+dpainting -> dsketch: 0.4738
+dreal -> dsketch: 0.4647
