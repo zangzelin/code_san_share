@@ -1,6 +1,8 @@
 ## Code for SAN
 
-This repository provides code for SAN.
+This repository provides code for ["Boosting Novel Category Discovery Over Domains with Soft Contrastive Learning and All in One Classifier"](https://openaccess.thecvf.com/content/ICCV2023/papers/Zang_Boosting_Novel_Category_Discovery_Over_Domains_with_Soft_Contrastive_Learning_ICCV_2023_paper.pdf).
+
+
 
 ### Environment
 
@@ -23,6 +25,7 @@ mkdir img
 python train_san.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=./txt/source_webcam_opda_zzl.txt --target_data=./txt/target_dslr_opda_zzl.txt
 ```
 
+
 # opda 
 ## domainet
 
@@ -32,4 +35,22 @@ wandb agent */OVANET_DMT/***
 ```
 The sweep results is in http://www.zangzelin.fun:4080/zangzelin/OVANET_DMT/sweeps/yu5k29s9?workspace=user-zangzelin
 
-## domainet
+```
+run 1:
+dpainting -> dreal : 0.5838
+dsketch -> dreal : 0.5793
+dreal -> dpainting : 0.5293
+dsketch -> dpainting : 0.4791
+dpainting -> dsketch : 0.4758
+dreal -> dsketch : 0.4671
+mean: 51.9
+
+run 2:
+dpainting -> dreal: 0.58
+dsketch -> dreal: 0.5823
+dreal -> dpainting: 0.5283
+dsketch -> dpainting: 0.4822
+dpainting -> dsketch: 0.4738
+dreal -> dsketch: 0.4647
+mean: 51.9
+```
