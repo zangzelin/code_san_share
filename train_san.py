@@ -328,10 +328,10 @@ if (args.S != args.T or args.T == 'visda'):
                         step, test_loader_s, test_loader, logname, n_share, [G_test, mlp_test],
                         [C1_test, C2_test], mlp_test, open=open, argsSName=args.S
                         )
-                    print('h_score_c2_test', h_score_c2_test, 'h_score_epoch', h_score_epoch)
+                    print('h_score_c2_test', h_score_c2_test)
 
                 # print("acc all %s h_score %s " % (acc_o, h_score))
-                print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))
+                # print("c2 acc all %s c2 h_score %s " % (acc_o_c2, h_score_c2))
                 # print("c2 acc all eachclass %s c2 h_score eachclass %s " % (acc_o_c2_eachclass, h_score_c2_eachclass))
                 wandb.log({
                     'step': step,
