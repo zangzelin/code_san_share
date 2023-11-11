@@ -19,7 +19,7 @@ wandb                        0.12.5
 ```
 mkdir file_save
 mkdir img
-python train_san.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=./txt/source_webcam_opda_zzl.txt --target_data=./txt/target_dslr_opda_zzl.txt
+python train_san.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=webcam_opda_zzl.txt --target_data=dslr_opda_zzl.txt
 ```
 
 # opda 
@@ -48,3 +48,12 @@ dsketch -> dpainting: 0.4822
 dpainting -> dsketch: 0.4738
 dreal -> dsketch: 0.4647
 mean: 51.9
+
+run 3:
+dpainting -> _dsketch: 0.4707
+dreal -> _dsketch: 0.4651
+dreal -> _dpainting: 0.5298
+dpainting -> _dreal: 0.5781
+dsketch -> _dreal: 0.5886
+dsketch -> _dpainting: 0.4904
+mean: 52.0
