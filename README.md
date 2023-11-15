@@ -22,7 +22,7 @@ mkdir img
 python train_san.py --alpha=0.7 --augNearRate=10000 --aug_type=1 --beta=1.4 --config=configs/office-train-config_OPDA.yaml --data_aug_crop=0.8 --ent_open_scale=0.4 --gamma=0.6 --source_data=webcam_opda_zzl.txt --target_data=dslr_opda_zzl.txt
 ```
 
-# opda 
+# UNDA 
 ## domainet
 
 ```
@@ -78,5 +78,65 @@ mean: 52.0
 ```
 
 ## visda
+
+``` bash
+train_san.py --alpha=0.9 --augNearRate=100 --aug_type=1 --batch_size=30 --beta=1.4 --config=configs/visda-train-config_UDA.yaml --data_aug_crop=0.55 --ent_open_scale=0.08 --gamma=0.9 --lr=0.006 --min_step=5000 --mlp_weight_decay=0.0002 --multi=0.2 --sigmaP=50 --source_data=./txt/source_visda_list_univ_zzl.txt --target_data=./txt/target_visda_list_univ_zzl.txt --v_latent=10
+```
+
+the results 
+
+``` bash
+run 1:
+hscore: 61.2
+```
+
+## officehome
+
+``` bash
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Art_univ_zzl.txt --target_data=./txt/target_Real_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Product_univ_zzl.txt --target_data=./txt/target_Real_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Real_univ_zzl.txt --target_data=./txt/target_Art_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Art_univ_zzl.txt --target_data=./txt/target_Product_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Clipart_univ_zzl.txt --target_data=./txt/target_Real_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Real_univ_zzl.txt --target_data=./txt/target_Product_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Product_univ_zzl.txt --target_data=./txt/target_Art_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Clipart_univ_zzl.txt --target_data=./txt/target_Art_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Clipart_univ_zzl.txt --target_data=./txt/target_Product_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Real_univ_zzl.txt --target_data=./txt/target_Clipart_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Art_univ_zzl.txt --target_data=./txt/target_Clipart_univ_zzl.txt --v_latent=10
+
+train_san.py --alpha=0.5 --augNearRate=10000 --aug_type=1 --batch_size=50 --beta=1.2 --config=configs/officehome-train-config_OPDA.yaml --data_aug_crop=0.7 --ent_open_scale=0.1 --gamma=0.6 --lr=0.01 --min_step=10000 --mlp_weight_decay=0.0005 --multi=0.2 --sigmaP=50 --source_data=./txt/source_Product_univ_zzl.txt --target_data=./txt/target_Clipart_univ_zzl.txt --v_latent=10
+```
+
+the results 
+
+``` bash
+
+Art -> Real : 86.93
+Product -> Real : 82.78
+Real ->  Art : 81.07
+Art -> duct : 80.97
+Clipart -> Real : 80.65
+Real -> duct : 80.51
+Product ->  Art : 75.7
+Clipart ->  Art : 73.81
+Clipart -> duct : 72.54
+Real -> part : 66.27
+Art -> part : 65.96
+Product -> part : 63.07
+mean hscore: 75.9
+```
+
+
 
 
